@@ -3,28 +3,55 @@ const $ = require('cheerio');
 const fs = require('fs')
 const json2csv = require('json2csv').parse;
 // const url = 'https://en.wikipedia.org/wiki/List_of_Presidents_of_the_United_States';
-const url = 'https://www.amazon.in/Vivo-Y81-Black-Storage-Offers/product-reviews/B07JGLQJQ3/ref=dpx_acr_txt?showViewpoints=1'
 
-rp(url)
-  .then(function(html){
-    //success!
-    console.log($('div > div > a', html).length);
-    var data = $('span.review-text', html);
-    // var data = $('big > a', html);
-    console.log(typeof data);
-    fs.writeFile("dataMined.json",data , function(err) {
-	    if(err) {
-	    	console.log("the file not saved")
-	        return console.log(err);
+var pageNumber = 1; 
+var dataLength = 10;
+
+
+function storeData(pageNumber){
+	const url = 'https://www.amazon.in/Vivo-Y81-Black-Storage-Offers/product-reviews/B07JGLQJQ3/ref=cm_cr_arp_d_viewopt_srt?showViewpoints=1&pageNumber='+pageNumber+'&sortBy=recent'	
+	console.log(url)
+	rp(url)
+	  .then(function(html){
+	    //success!
+	    console.log($('div > div > a', html).length);
+	    var data = $('span.review-text', html);
+	    // var data = $('big > a', html);
+	    dataLength = data.length 
+	    console.log(dataLength);
+	    if(dataLength == 0){
+	    	processData();
+	    } 
+	    else if(pageNumber == 1){
+		    fs.writeFile("dataMined.json",data , function(err) {
+			    if(err) {
+			    	console.log("the file not saved")
+			        return console.log(err);
+			    }
+			    console.log("The file was saved!");
+			    pageNumber++;			    
+			    storeData(pageNumber)
+			}); 
+			// fs.writeFileSync("dataMined.json", data);	    	
+	    } 
+	    else{
+		    fs.appendFile("dataMined.json",data , function(err) {
+			    if(err) {
+			    	console.log("the file not saved")
+			        return console.log(err);
+			    }
+			    console.log("The file was saved!");
+			    pageNumber++;
+				storeData(pageNumber)			    
+			});	    	
 	    }
-	    console.log("The file was saved!");
-	    processData();
-	}); 
-	// fs.writeFileSync("dataMined.json", data);
-  })
-  .catch(function(err){
-    //handle error
- });
+	  })
+	  .catch(function(err){
+	    //handle error
+	    console.log(err)
+	 });	
+}
+
 
 
  function processData(){
@@ -57,3 +84,6 @@ rp(url)
 		});
 	});	
  }
+
+
+storeData(pageNumber)
