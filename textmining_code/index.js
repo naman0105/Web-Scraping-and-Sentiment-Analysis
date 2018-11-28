@@ -9,17 +9,18 @@ var dataLength = 10;
 
 
 function storeData(pageNumber){
+	console.log("*-----------------------------------------------------------------------*")
 	const url = 'https://www.amazon.in/Vivo-Y81-Black-Storage-Offers/product-reviews/B07JGLQJQ3/ref=cm_cr_arp_d_viewopt_srt?showViewpoints=1&pageNumber='+pageNumber+'&sortBy=recent'	
-	console.log(url)
+	console.log("now getting reviews from this page  "+url)
 	rp(url)
 	  .then(function(html){
-	    //success!
-	    console.log($('div > div > a', html).length);
+	    //success!	   
 	    var data = $('span.review-text', html);
 	    // var data = $('big > a', html);
 	    dataLength = data.length 
-	    console.log(dataLength);
+	    console.log("Number of reviews on this page ::-- "+dataLength);
 	    if(dataLength == 0){
+	    	console.log("no more reviews are found")
 	    	processData();
 	    } 
 	    else if(pageNumber == 1){
@@ -28,7 +29,7 @@ function storeData(pageNumber){
 			    	console.log("the file not saved")
 			        return console.log(err);
 			    }
-			    console.log("The file was saved!");
+			    console.log("a new file dataMined.json created for the reviews");
 			    pageNumber++;			    
 			    storeData(pageNumber)
 			}); 
@@ -40,7 +41,7 @@ function storeData(pageNumber){
 			    	console.log("the file not saved")
 			        return console.log(err);
 			    }
-			    console.log("The file was saved!");
+			    console.log("reviews appended to dataMined.json file");
 			    pageNumber++;
 				storeData(pageNumber)			    
 			});	    	
@@ -55,6 +56,9 @@ function storeData(pageNumber){
 
 
  function processData(){
+ 	console.log("*-----------------------------------------------------------------------*")
+ 	console.log("*-----------------------------------------------------------------------*")
+ 	console.log("starting proceessing the data now")
  	var arr;
  	fs.readFile("dataMined.json", 'utf8', function(err, contents) {
 		var dataRead = contents;
@@ -65,9 +69,10 @@ function storeData(pageNumber){
 			arr[i] = arr[i].slice(62);
 			//console.log(arr[i] + "   ")
 		}
-		console.log("length "+ arr.length )
+		// console.log("length "+ arr.length )
 		arr = arr.slice(0, arr.length-1)
-		console.log("length "+ arr.length )
+		console.log("*-----------------------------------------------------------------------*")
+		console.log("Total number of reviews ::-- "+ arr.length )
 		//console.log(arr)
 		var arr2 = [];
 		for(var i=0; i< arr.length; i++){
@@ -80,7 +85,8 @@ function storeData(pageNumber){
 	    	console.log("the file not saved")
 	        return console.log(err);
 	    }
-	    console.log("The file was saved!");	
+	    console.log("*-----------------------------------------------------------------------*")
+	    console.log("minedData.csv file is created for all the reviews collected");	
 		});
 	});	
  }
