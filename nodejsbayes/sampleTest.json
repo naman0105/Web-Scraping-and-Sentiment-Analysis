@@ -1,0 +1,320 @@
+{
+    "resource": "/hello-world",
+    "path": "/hello-world",
+    "httpMethod": "GET",
+    "headers": {
+        "Accept": "*/*",
+        "Authorization": "e5985b913e6f4c6dc396f388d23f602e00717713",
+        "Content-Type": "application/json",
+        "Accept-Encoding": "gzip, deflate, br",
+        "Accept-Language": "en-US,en;q=0.9",
+        "cache-control": "no-cache",
+        "CloudFront-Forwarded-Proto": "https",
+        "CloudFront-Is-Desktop-Viewer": "true",
+        "CloudFront-Is-Mobile-Viewer": "false",
+        "CloudFront-Is-SmartTV-Viewer": "false",
+        "CloudFront-Is-Tablet-Viewer": "false",
+        "CloudFront-Viewer-Country": "IN",
+        "Host": "5itrdrc99a.execute-api.us-east-1.amazonaws.com",
+        "postman-token": "9a75c935-345c-5edc-29fb-14a8cdf86fdd",
+        "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36",
+        "Via": "2.0 f1049476caf714fd94ef8827360d9bb1.cloudfront.net (CloudFront)",
+        "X-Amz-Cf-Id": "Kn0wDhIYkM8E76_-aCl-EYcltcuLufq5Efyf4YV2fM6pZUkOV6oCcA==",
+        "X-Amzn-Trace-Id": "Root=1-5b4ddeea-00448481027d362ecbafdce6",
+        "X-Forwarded-For": "106.51.20.137, 54.239.160.13",
+        "X-Forwarded-Port": "443",
+        "X-Forwarded-Proto": "https"
+    },
+    "queryStringParameters": {
+        "word": "nimmaa",
+        "days": 60
+    },
+    "pathParameters": null,
+    "stageVariables": null,
+    "requestContext": {
+        "resourceId": "lp9gts",
+        "resourcePath": "/hello-world",
+        "httpMethod": "GET",
+        "extendedRequestId": "KK_EkEn3IAMF5Fw=",
+        "requestTime": "17/Jul/2018:12:19:54 +0000",
+        "path": "/dev/hello-world",
+        "accountId": "604063934386",
+        "protocol": "HTTP/1.1",
+        "stage": "dev",
+        "requestTimeEpoch": 1531829994066,
+        "requestId": "b607e3bd-89bb-11e8-b52a-2f2610be300a",
+        "identity": {
+            "cognitoIdentityPoolId": null,
+            "accountId": null,
+            "cognitoIdentityId": null,
+            "caller": null,
+            "sourceIp": "106.51.20.137",
+            "accessKey": null,
+            "cognitoAuthenticationType": null,
+            "cognitoAuthenticationProvider": null,
+            "userArn": null,
+            "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36",
+            "user": null
+        },
+        "apiId": "5itrdrc99a"
+    },
+    "body": null,
+    "isBase64Encoded": false,
+    "user": {
+        "first_name": "Denzil",
+        "last_name": "Lewis",
+        "user_id": "35440",
+        "email": "blindmelonblues@gmail.com",
+        "course": "english_to_kanada",
+        "joined": "2018-06-08T15:09:24.095Z"
+    },
+    "metadata": {
+        "from_date": "2018/06/09 08:11:48",
+        "to_date": "2018/08/08 08:11:48"
+    },
+    "dates": [
+        "13/06/2018",
+        "15/06/2018",
+        "16/06/2018",
+        "19/07/2018",
+        "31/07/2018",
+        "01/08/2018",
+        "02/08/2018"
+    ],
+    "good_words": [
+        {
+            "word": "ẹshṭu",
+            "wordEnglish": "how many",
+            "score": 7.221153846153846
+        },
+        {
+            "word": "koḍi",
+            "wordEnglish": "give",
+            "score": 4.75
+        },
+        {
+            "word": "gidda",
+            "wordEnglish": "short",
+            "score": 3.625
+        },
+        {
+            "word": "mane",
+            "wordEnglish": "house",
+            "score": 3.5625
+        },
+        {
+            "word": "adu",
+            "wordEnglish": "it",
+            "score": 3.5
+        },
+        {
+            "word": "ẹnu",
+            "wordEnglish": "what",
+            "score": 3.2954545454545454
+        },
+        {
+            "word": "ẹraḍu",
+            "wordEnglish": "two",
+            "score": 3.25
+        },
+        {
+            "word": "naalku",
+            "wordEnglish": "four",
+            "score": 3.25
+        },
+        {
+            "word": "angaḍi",
+            "wordEnglish": "shop",
+            "score": 3.25
+        },
+        {
+            "word": "ondu",
+            "wordEnglish": "one",
+            "score": 3.25
+        },
+        {
+            "word": "idu",
+            "wordEnglish": "this",
+            "score": 3.2272727272727275
+        },
+        {
+            "word": "doora",
+            "wordEnglish": "far",
+            "score": 3.175
+        },
+        {
+            "word": "hatthira",
+            "wordEnglish": "near",
+            "score": 3.175
+        },
+        {
+            "word": "yaavudu",
+            "wordEnglish": "which",
+            "score": 3.1
+        },
+        {
+            "word": "aaru",
+            "wordEnglish": "six",
+            "score": 3.025
+        },
+        {
+            "word": "beḍa",
+            "wordEnglish": "don't want",
+            "score": 2.9166666666666665
+        }
+    ],
+    "bad_words": [
+        {
+            "word": "mooru",
+            "wordEnglish": "three",
+            "score": 2.25
+        },
+        {
+            "word": "rajya",
+            "wordEnglish": "state",
+            "score": 2.25
+        },
+        {
+            "word": "ganṭe",
+            "wordEnglish": "bell",
+            "score": 1.75
+        },
+        {
+            "word": "raatri",
+            "wordEnglish": "night",
+            "score": 1.75
+        },
+        {
+            "word": "ayithaa",
+            "wordEnglish": "was it done ?",
+            "score": 1.75
+        },
+        {
+            "word": "yaaradu",
+            "wordEnglish": "whose",
+            "score": 1.75
+        },
+        {
+            "word": "yaava",
+            "wordEnglish": "which",
+            "score": 1.75
+        },
+        {
+            "word": "kottu",
+            "wordEnglish": "give",
+            "score": 1.5
+        },
+        {
+            "word": "keḷi",
+            "wordEnglish": "listen",
+            "score": 1.5
+        },
+        {
+            "word": "noḍi",
+            "wordEnglish": "watch",
+            "score": 1.5
+        },
+        {
+            "word": "yaake",
+            "wordEnglish": "why",
+            "score": 1.5
+        },
+        {
+            "word": "idaaḷe",
+            "wordEnglish": "she is",
+            "score": 1.25
+        },
+        {
+            "word": "avanu",
+            "wordEnglish": "he",
+            "score": 1.25
+        },
+        {
+            "word": "idaane",
+            "wordEnglish": "he is",
+            "score": 1.25
+        },
+        {
+            "word": "avaḷu",
+            "wordEnglish": "she",
+            "score": 1.25
+        },
+        {
+            "word": "idaare",
+            "wordEnglish": "they are",
+            "score": 1.25
+        }
+    ],
+    "good_lessions": [
+        {
+            "name": "KFE-L-L6-4",
+            "score": 100
+        },
+        {
+            "name": "KFE-L-L4-5",
+            "score": 100
+        },
+        {
+            "name": "KFE-L-L5-3",
+            "score": 100
+        },
+        {
+            "name": "KFE-L-L6-3",
+            "score": 100
+        },
+        {
+            "name": "KFE-L-L3-2",
+            "score": 97.5
+        }
+    ],
+    "bad_lessions": [
+        {
+            "name": "KFE-L-L4-1",
+            "score": 81
+        },
+        {
+            "name": "KFE-L-L4-2",
+            "score": 80.5
+        },
+        {
+            "name": "KFE-L-L3-5",
+            "score": 69.5
+        },
+        {
+            "name": "KFE-L-L6-5",
+            "score": 45
+        },
+        {
+            "name": "KFE-L-L2-5",
+            "score": 39
+        }
+    ],
+    "good_levels": [
+        {
+            "name": "L5",
+            "score": 91.25
+        },
+        {
+            "name": "L1",
+            "score": 90.05
+        },
+        {
+            "name": "L4",
+            "score": 86.6
+        }
+    ],
+    "bad_levels": [
+        {
+            "name": "L3",
+            "score": 85.45
+        },
+        {
+            "name": "L6",
+            "score": 84
+        },
+        {
+            "name": "L2",
+            "score": 81.05
+        }
+    ]
+}
