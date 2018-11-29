@@ -7,7 +7,7 @@ const json2csv = require('json2csv').parse;
 function classifyText(){
 
 	var classifier = bayes()
-	fs.createReadStream('PosBook1.csv')
+	fs.createReadStream('PosBook.csv')
 	.pipe(csv())
 	.on('data', function(data){
 	    try {
@@ -29,9 +29,10 @@ function classifyText(){
 		fs.createReadStream('../minedData/minedData.csv')
 		.pipe(csv())
 		.on('data', function(data){
-		    console.log(data.Review)
-		    var result = classifier.categorize(data.Review);
-		    predictedData.push({"Review": data.Review, "Result": result})		    
+		    var dataToBeReviewed = data.Review.toLowerCase();
+		    console.log(dataToBeReviewed)		    
+		    var result = classifier.categorize(dataToBeReviewed);
+		    predictedData.push({"Review": dataToBeReviewed, "Result": result})		    
 		})
 		.on('end',function(){
 			const csv = json2csv(predictedData);
